@@ -1,0 +1,50 @@
+# Ghostty Configuration
+# Current theme
+theme = dark:onedarkpro_vaporwave,light:Xcode Light
+
+# Basic terminal settings
+
+window-title-font-family="MonoLisa"
+cursor-style-blink=true
+
+macos-titlebar-style = transparent
+
+macos-titlebar-style = tabs 
+mouse-hide-while-typing = true 
+auto-update-channel = tip 
+shell-integration-features = ssh-env,ssh-terminfo  
+bell-features = border
+
+
+macos-window-shadow = false
+macos-titlebar-proxy-icon = hidden
+alpha-blending = native
+term=xterm-256color
+
+#font style
+font-family="MonoLisa Medium"
+font-size=14
+font-thicken=true
+font-feature = +ss01,+ss02,+ss07,+ss03,+zero,+ss18,+ss16,+ss12
+
+macos-option-as-alt = true
+background-opacity = 0.92
+background-blur-radius = 20
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+
+
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
+window-padding-color = extend
+
+# Split appearance
+unfocused-split-opacity = 0.99
+
+fullscreen = true
+maximize = true
+
+#custom-shader = shaders/cursor_tail.glsl
+
