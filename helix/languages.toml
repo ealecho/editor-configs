@@ -2,6 +2,17 @@
 deno = { command = "deno", args = [ "lsp" ]}
 emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
 
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+feature_words = true
+feature_snippets = true
+snippets_first = true
+snippets_inline_by_word_tail = false
+feature_unicode_input = false
+feature_paths = false
+
 [language-server.typescript-language-server]
 command = "typescript-language-server"
 args = ["--stdio"]
@@ -50,28 +61,28 @@ provideFormatter = true
 
 [[language]]
 name = "typescript"
-language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
+language-servers = [ "scls", "typescript-language-server", "eslint", "tailwindcss-ls" ]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
+language-servers = [ "scls", "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
 
 [[language]]
 name = "javascript"
-language-servers = [ "typescript-language-server", "eslint", "tailwindcss-ls" ]
+language-servers = [ "scls", "typescript-language-server", "eslint", "tailwindcss-ls" ]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "prettier", args = [ "--parser", "babel" ] }
 auto-format = true
 
 [[language]]
 name = "jsx"
-language-servers = [ "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
+language-servers = [ "scls", "typescript-language-server", "eslint", "emmet-ls", "tailwindcss-ls" ]
 # formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 formatter = { command = "prettier", args = [ "--parser", "babel" ] }
 auto-format = true

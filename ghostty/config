@@ -19,7 +19,7 @@ bell-features = border
 macos-window-shadow = false
 macos-titlebar-proxy-icon = hidden
 alpha-blending = native
-term=xterm-256color
+term=ghostty
 
 #font style
 font-family="MonoLisa Medium"

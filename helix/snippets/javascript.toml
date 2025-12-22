@@ -1,0 +1,194 @@
+# Custom ergonomic JS/TS snippets
+# These supplement the friendly-snippets collection
+
+# Console helpers
+[[snippets]]
+prefix = "clj"
+body = 'console.log(JSON.stringify($1, null, 2))'
+description = "console.log JSON formatted"
+
+[[snippets]]
+prefix = "clt"
+body = 'console.table($1)'
+description = "console.table"
+
+[[snippets]]
+prefix = "clg"
+body = 'console.group("$1")\n$0\nconsole.groupEnd()'
+description = "console.group"
+
+[[snippets]]
+prefix = "cti"
+body = 'console.time("$1")\n$0\nconsole.timeEnd("$1")'
+description = "console.time"
+
+# Quick exports
+[[snippets]]
+prefix = "ed"
+body = 'export default $0'
+description = "export default"
+
+[[snippets]]
+prefix = "edf"
+body = 'export default function $1($2) {\n\t$0\n}'
+description = "export default function"
+
+[[snippets]]
+prefix = "eda"
+body = 'export default async function $1($2) {\n\t$0\n}'
+description = "export default async function"
+
+# Async patterns
+[[snippets]]
+prefix = "aw"
+body = 'await $0'
+description = "await"
+
+[[snippets]]
+prefix = "afn"
+body = 'async function $1($2) {\n\t$0\n}'
+description = "async function"
+
+[[snippets]]
+prefix = "trya"
+body = 'try {\n\tawait $1\n} catch (error) {\n\tconsole.error(error)\n\t$0\n}'
+description = "try-catch with await"
+
+# Destructuring
+[[snippets]]
+prefix = "des"
+body = 'const { $1 } = $0'
+description = "object destructure"
+
+[[snippets]]
+prefix = "desa"
+body = 'const [$1] = $0'
+description = "array destructure"
+
+# Conditionals
+[[snippets]]
+prefix = "??"
+body = '$1 ?? $0'
+description = "nullish coalescing"
+
+[[snippets]]
+prefix = "?."
+body = '$1?.$0'
+description = "optional chaining"
+
+[[snippets]]
+prefix = "ifel"
+body = 'if ($1) {\n\t$2\n} else {\n\t$0\n}'
+description = "if-else"
+
+# Array methods (one-liner versions)
+[[snippets]]
+prefix = "mapl"
+body = '$1.map($2 => $0)'
+description = "map inline"
+
+[[snippets]]
+prefix = "filterl"
+body = '$1.filter($2 => $0)'
+description = "filter inline"
+
+[[snippets]]
+prefix = "findl"
+body = '$1.find($2 => $0)'
+description = "find inline"
+
+[[snippets]]
+prefix = "somel"
+body = '$1.some($2 => $0)'
+description = "some inline"
+
+[[snippets]]
+prefix = "everyl"
+body = '$1.every($2 => $0)'
+description = "every inline"
+
+# Object helpers
+[[snippets]]
+prefix = "oke"
+body = 'Object.keys($1).forEach($2 => {\n\t$0\n})'
+description = "Object.keys forEach"
+
+[[snippets]]
+prefix = "ove"
+body = 'Object.values($1).forEach($2 => {\n\t$0\n})'
+description = "Object.values forEach"
+
+[[snippets]]
+prefix = "oee"
+body = 'Object.entries($1).forEach(([$2, $3]) => {\n\t$0\n})'
+description = "Object.entries forEach"
+
+[[snippets]]
+prefix = "ofd"
+body = 'Object.fromEntries($0)'
+description = "Object.fromEntries"
+
+# Spread patterns
+[[snippets]]
+prefix = "spo"
+body = '{ ...$1, $0 }'
+description = "spread object"
+
+[[snippets]]
+prefix = "spa"
+body = '[ ...$1, $0 ]'
+description = "spread array"
+
+# Common patterns
+[[snippets]]
+prefix = "timeout"
+body = 'setTimeout(() => {\n\t$0\n}, $1)'
+description = "setTimeout"
+
+[[snippets]]
+prefix = "interval"
+body = 'setInterval(() => {\n\t$0\n}, $1)'
+description = "setInterval"
+
+[[snippets]]
+prefix = "raf"
+body = 'requestAnimationFrame(() => {\n\t$0\n})'
+description = "requestAnimationFrame"
+
+# Fetch
+[[snippets]]
+prefix = "fetch"
+body = 'const response = await fetch($1)\nconst data = await response.json()\n$0'
+description = "fetch with json"
+
+[[snippets]]
+prefix = "fetchp"
+body = 'const response = await fetch($1, {\n\tmethod: "POST",\n\theaders: { "Content-Type": "application/json" },\n\tbody: JSON.stringify($2)\n})\nconst data = await response.json()\n$0'
+description = "fetch POST"
+
+# Type checking
+[[snippets]]
+prefix = "tof"
+body = 'typeof $1 === "$0"'
+description = "typeof check"
+
+[[snippets]]
+prefix = "ioa"
+body = 'Array.isArray($0)'
+description = "Array.isArray"
+
+# Quick returns
+[[snippets]]
+prefix = "ret"
+body = 'return $0'
+description = "return"
+
+[[snippets]]
+prefix = "reto"
+body = 'return {\n\t$0\n}'
+description = "return object"
+
+[[snippets]]
+prefix = "reta"
+body = 'return [\n\t$0\n]'
+description = "return array"

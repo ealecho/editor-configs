@@ -1,0 +1,160 @@
+# TypeScript-specific snippets
+
+# Type annotations
+[[snippets]]
+prefix = "int"
+body = 'interface $1 {\n\t$0\n}'
+description = "interface"
+
+[[snippets]]
+prefix = "intx"
+body = 'interface $1 extends $2 {\n\t$0\n}'
+description = "interface extends"
+
+[[snippets]]
+prefix = "type"
+body = 'type $1 = $0'
+description = "type alias"
+
+[[snippets]]
+prefix = "typeo"
+body = 'type $1 = {\n\t$0\n}'
+description = "type object"
+
+[[snippets]]
+prefix = "typeu"
+body = 'type $1 = $2 | $0'
+description = "type union"
+
+# Generics
+[[snippets]]
+prefix = "gen"
+body = '<$1>'
+description = "generic"
+
+[[snippets]]
+prefix = "gent"
+body = '<T extends $1>'
+description = "generic with extends"
+
+# Function types
+[[snippets]]
+prefix = "fnt"
+body = '($1): $2 => {\n\t$0\n}'
+description = "typed arrow function"
+
+[[snippets]]
+prefix = "afnt"
+body = 'async ($1): Promise<$2> => {\n\t$0\n}'
+description = "typed async arrow function"
+
+# Common types
+[[snippets]]
+prefix = "prom"
+body = 'Promise<$0>'
+description = "Promise type"
+
+[[snippets]]
+prefix = "parr"
+body = 'Array<$0>'
+description = "Array type"
+
+[[snippets]]
+prefix = "rec"
+body = 'Record<$1, $0>'
+description = "Record type"
+
+[[snippets]]
+prefix = "part"
+body = 'Partial<$0>'
+description = "Partial type"
+
+[[snippets]]
+prefix = "req"
+body = 'Required<$0>'
+description = "Required type"
+
+[[snippets]]
+prefix = "pick"
+body = "Pick<$1, '$0'>"
+description = "Pick type"
+
+[[snippets]]
+prefix = "omit"
+body = "Omit<$1, '$0'>"
+description = "Omit type"
+
+[[snippets]]
+prefix = "readonly"
+body = 'Readonly<$0>'
+description = "Readonly type"
+
+# Type guards
+[[snippets]]
+prefix = "isnull"
+body = '$1 === null || $1 === undefined'
+description = "null check"
+
+[[snippets]]
+prefix = "notnull"
+body = '$1 !== null && $1 !== undefined'
+description = "not null check"
+
+[[snippets]]
+prefix = "tguard"
+body = 'function is$1(value: unknown): value is $1 {\n\treturn $0\n}'
+description = "type guard function"
+
+# Assertions
+[[snippets]]
+prefix = "as"
+body = '$1 as $0'
+description = "type assertion"
+
+[[snippets]]
+prefix = "asconst"
+body = '$1 as const'
+description = "as const assertion"
+
+# Enums
+[[snippets]]
+prefix = "enum"
+body = 'enum $1 {\n\t$0\n}'
+description = "enum"
+
+[[snippets]]
+prefix = "enumc"
+body = "const enum $1 {\n\t$0\n}"
+description = "const enum"
+
+# Class helpers
+[[snippets]]
+prefix = "ctor"
+body = 'constructor($1) {\n\t$0\n}'
+description = "constructor"
+
+[[snippets]]
+prefix = "priv"
+body = 'private $0'
+description = "private"
+
+[[snippets]]
+prefix = "pub"
+body = 'public $0'
+description = "public"
+
+[[snippets]]
+prefix = "prot"
+body = 'protected $0'
+description = "protected"
+
+[[snippets]]
+prefix = "ro"
+body = 'readonly $0'
+description = "readonly"
+
+# Async/Error handling with types
+[[snippets]]
+prefix = "tryat"
+body = 'try {\n\tconst result: $1 = await $2\n\t$0\n} catch (error: unknown) {\n\tif (error instanceof Error) {\n\t\tconsole.error(error.message)\n\t}\n}'
+description = "typed try-catch await"
