@@ -1,0 +1,60 @@
+layout {
+    default_tab_template {
+        children
+        pane size=2 borderless=true {
+            plugin location="file:/Users/alechoedwin/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "#[fg=white,bold] {session} #[] {tabs}"
+                format_center ""
+                format_right  "#[fg=white]{pipe_zjstatus_hints}"
+                format_space  ""
+
+                pipe_zjstatus_hints_format "{output}"
+
+                // border_enabled  "true"
+                // border_char     " "
+                // border_format   "#[fg=#4C435C]"
+                // border_position "bottom"
+
+                hide_frame_for_single_pane "false"
+
+                mode_locked      ""
+                mode_normal      " NORMAL "
+                mode_resize      " RESIZE "
+                mode_pane        " PANE "
+                mode_move        " MOVE "
+                mode_tab         " TAB "
+                mode_scroll      " SCROLL "
+                mode_search      " SEARCH "
+                mode_entersearch " ENTER SEARCH "
+                mode_renametab   " RENAME TAB "
+                mode_renamepane  " RENAME PANE "
+                mode_session     " SESSION "
+                mode_tmux        " TMUX "
+
+                tab_active              "#[fg=white,bold] {index} {name}"
+                tab_active_fullscreen   "#[fg=white,bold] {fullscreen_indicator} {index} {name}"
+                tab_active_sync         "#[fg=white,bold] {sync_indicator} {index} {name}"
+
+                tab_normal              "#[fg=bright_black,bold] {index} {name}"
+                tab_normal_fullscreen   "#[fg=bright_black,bold] {fullscreen_indicator} {index} {name}"
+                tab_normal_sync         "#[fg=bright_black,bold] {sync_indicator} {index} {name}"
+
+                tab_separator " "
+
+                tab_sync_indicator       "󰓦"
+                tab_fullscreen_indicator "󰊓"
+                tab_floating_indicator   "⬚"
+
+                tab_rename              "#[bg=bright_black,fg=white,bold] {index} {name} {floating_indicator} "
+
+                tab_display_count         "9"
+                tab_truncate_start_format "#[fg=yellow]  +{count}  "
+                tab_truncate_end_format   "#[fg=yellow]   +{count} "
+
+                datetime        "#[fg=magenta,bold] {format} "
+                datetime_format "%H:%M:%S"
+                datetime_timezone "America/New_York"
+            }
+        }
+    }    
+}

@@ -1,0 +1,141 @@
+themes {
+    onedarkpro-vaporwave {
+        // Text components
+        text_unselected {
+            base 180 183 207
+            background 17 30 42
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        text_selected {
+            base 255 255 255
+            background 48 75 102
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+
+        // Ribbon components (tabs, mode indicators)
+        ribbon_unselected {
+            base 88 91 137
+            background 34 36 53
+            emphasis_0 70 163 175
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        ribbon_selected {
+            base 255 255 255
+            background 37 171 228
+            emphasis_0 17 30 42
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+
+        // Table components
+        table_title {
+            base 180 183 207
+            background 34 36 53
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        table_cell_unselected {
+            base 180 183 207
+            background 17 30 42
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        table_cell_selected {
+            base 255 255 255
+            background 48 75 102
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+
+        // List components
+        list_unselected {
+            base 180 183 207
+            background 17 30 42
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        list_selected {
+            base 255 255 255
+            background 48 75 102
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+
+        // Frame components (pane borders)
+        frame_unselected {
+            base 88 91 137
+            background 17 30 42
+            emphasis_0 70 163 175
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        frame_selected {
+            base 37 171 228
+            background 17 30 42
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+        frame_highlight {
+            base 255 79 161
+            background 17 30 42
+            emphasis_0 37 171 228
+            emphasis_1 117 190 120
+            emphasis_2 234 232 82
+            emphasis_3 255 79 161
+        }
+
+        // Exit codes
+        exit_code_success {
+            base 117 190 120
+            background 17 30 42
+            emphasis_0 117 190 120
+            emphasis_1 117 190 120
+            emphasis_2 117 190 120
+            emphasis_3 117 190 120
+        }
+        exit_code_error {
+            base 225 103 101
+            background 17 30 42
+            emphasis_0 225 103 101
+            emphasis_1 225 103 101
+            emphasis_2 225 103 101
+            emphasis_3 225 103 101
+        }
+
+        // Multiplayer colors
+        multiplayer_user_colors {
+            player_1 255 79 161
+            player_2 37 171 228
+            player_3 117 190 120
+            player_4 234 232 82
+            player_5 70 163 175
+            player_6 233 145 144
+            player_7 82 188 234
+            player_8 152 206 154
+            player_9 240 238 127
+            player_10 102 183 194
+        }
+    }
+}

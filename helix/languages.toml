@@ -127,6 +127,10 @@ auto-format = true
 plugins.ruff.enabled = false
 
 [[language]]
+name = "zig"
+language-servers = ["scls", "zls"]
+
+[[language]]
 name = "python"
 auto-format = true  # ":toggle-option autoformat" to disable
 # Requires ruff, that can be installed with pipx

@@ -1,0 +1,261 @@
+keybinds clear-defaults=true {
+    // ============================================
+    // Ported from your tmux.conf
+    // Prefix: Ctrl+Space (like your tmux config)
+    // ============================================
+
+    locked {
+        bind "Ctrl Space" { SwitchToMode "normal"; }
+    }
+    normal {
+        bind "Ctrl Space" { SwitchToMode "locked"; }
+        bind "esc" { SwitchToMode "locked"; }
+
+        // Vim style pane selection (like tmux: prefix + h/j/k/l)
+        bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
+        bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
+        bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
+        bind "l" { MoveFocus "right"; SwitchToMode "locked"; }
+
+        // Split panes (like tmux: " for vertical, % for horizontal)
+        bind "\"" { NewPane "down"; SwitchToMode "locked"; }
+        bind "%" { NewPane "right"; SwitchToMode "locked"; }
+
+        // New tab
+        bind "t" { NewTab; SwitchToMode "locked"; }
+
+        // Next/prev window (like tmux: prefix + n/p)
+        bind "n" { GoToNextTab; SwitchToMode "locked"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "locked"; }
+
+        // Close pane (like tmux: prefix + x)
+        bind "x" { CloseFocus; SwitchToMode "locked"; }
+
+        // Detach (like tmux: prefix + d)
+        bind "d" { Detach; }
+
+        // Quit
+        bind "q" { Quit; }
+
+        // Rename tab (like tmux: prefix + ,)
+        bind "," { SwitchToMode "renametab"; TabNameInput 0; }
+
+        // Enter scroll/copy mode (like tmux: prefix + [)
+        bind "[" { SwitchToMode "scroll"; }
+
+        // Zoom/fullscreen pane (like tmux: prefix + z)
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+
+        // Go to tab by number (like tmux)
+        bind "1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "locked"; }
+
+        // Extra modes (zellij-specific, but useful)
+        bind "r" { SwitchToMode "resize"; }
+        bind "s" { SwitchToMode "session"; }
+        bind "o" { FocusNextPane; SwitchToMode "locked"; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
+    }
+
+    // Alt+arrows to switch panes without prefix (like your tmux: bind -n M-Left/Right/Up/Down)
+    shared_except "locked" "renametab" "renamepane" {
+        bind "esc" { SwitchToMode "locked"; }
+    }
+
+    locked {
+        // Alt+arrows to switch panes (no prefix needed, like tmux)
+        bind "Alt Left" { MoveFocus "left"; }
+        bind "Alt Right" { MoveFocus "right"; }
+        bind "Alt Up" { MoveFocus "up"; }
+        bind "Alt Down" { MoveFocus "down"; }
+
+        // Shift+arrows to switch tabs/windows (like tmux: bind -n S-Left/Right)
+        bind "Shift Left" { GoToPreviousTab; }
+        bind "Shift Right" { GoToNextTab; }
+
+        // Alt+H/L to switch tabs (like tmux: bind -n M-H/L)
+        bind "Alt H" { GoToPreviousTab; }
+        bind "Alt L" { GoToNextTab; }
+    }
+
+    // Scroll/copy mode with vim keys (like tmux copy-mode-vi)
+    scroll {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "h" { PageScrollUp; }
+        bind "l" { PageScrollDown; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "Ctrl f" { PageScrollDown; }
+        bind "Ctrl b" { PageScrollUp; }
+        bind "g" { ScrollToTop; }
+        bind "G" { ScrollToBottom; }
+        bind "e" { EditScrollback; SwitchToMode "locked"; }
+        bind "/" { SwitchToMode "entersearch"; SearchInput 0; }
+        bind "?" { SwitchToMode "entersearch"; SearchInput 0; }
+    }
+
+    entersearch {
+        bind "Ctrl c" { SwitchToMode "scroll"; }
+        bind "esc" { SwitchToMode "scroll"; }
+        bind "enter" { SwitchToMode "search"; }
+    }
+
+    search {
+        bind "esc" { SwitchToMode "scroll"; }
+        bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+        bind "n" { Search "down"; }
+        bind "N" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+    }
+
+    resize {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "h" { Resize "Increase left"; }
+        bind "j" { Resize "Increase down"; }
+        bind "k" { Resize "Increase up"; }
+        bind "l" { Resize "Increase right"; }
+        bind "H" { Resize "Decrease left"; }
+        bind "J" { Resize "Decrease down"; }
+        bind "K" { Resize "Decrease up"; }
+        bind "L" { Resize "Decrease right"; }
+        bind "Left" { Resize "Increase left"; }
+        bind "Down" { Resize "Increase down"; }
+        bind "Up" { Resize "Increase up"; }
+        bind "Right" { Resize "Increase right"; }
+        bind "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
+        bind "=" { Resize "Increase"; }
+    }
+
+    session {
+        bind "esc" { SwitchToMode "locked"; }
+        bind "Ctrl c" { SwitchToMode "locked"; }
+        bind "d" { Detach; }
+        bind "w" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
+        bind "c" {
+            LaunchOrFocusPlugin "configuration" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
+        bind "p" {
+            LaunchOrFocusPlugin "plugin-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
+    }
+
+    renametab {
+        bind "esc" { UndoRenameTab; SwitchToMode "locked"; }
+        bind "Ctrl c" { UndoRenameTab; SwitchToMode "locked"; }
+        bind "enter" { SwitchToMode "locked"; }
+    }
+
+    renamepane {
+        bind "esc" { UndoRenamePane; SwitchToMode "locked"; }
+        bind "Ctrl c" { UndoRenamePane; SwitchToMode "locked"; }
+        bind "enter" { SwitchToMode "locked"; }
+    }
+}
+
+// Plugin aliases
+plugins {
+    about location="zellij:about"
+    compact-bar location="zellij:compact-bar"
+    configuration location="zellij:configuration"
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    plugin-manager location="zellij:plugin-manager"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+
+    zjstatus-hints location="file:/Users/alechoedwin/.config/zellij/plugins/zjstatus-hints.wasm" {
+        max_length 0
+        overflow_str "..."
+        pipe_name "zjstatus_hints"
+        hide_in_base_mode true
+    }
+}
+
+load_plugins {
+    zjstatus-hints
+}
+
+web_client {
+    font "MonoLisa Medium, Symbols Nerd Font Mono, monospace"
+    font_size 14
+    cursor_style "block"
+    cursor_blink false
+    theme {
+        background 17 30 42
+        foreground 180 183 207
+        black 34 36 53
+        red 225 103 101
+        green 117 190 120
+        yellow 234 232 82
+        blue 37 171 228
+        magenta 255 79 161
+        cyan 70 163 175
+        white 180 183 207
+        bright_black 88 91 137
+        bright_red 233 145 144
+        bright_green 152 206 154
+        bright_yellow 240 238 127
+        bright_blue 82 188 234
+        bright_magenta 255 79 161
+        bright_cyan 102 183 194
+        bright_white 211 213 227
+        cursor 255 255 255
+        cursor_accent 17 30 42
+        selection_background 48 75 102
+        selection_foreground 255 255 255
+    }
+}
+
+// UI Settings
+simplified_ui true
+theme "onedarkpro-vaporwave"  // Custom theme matching Ghostty dark theme
+default_mode "locked"
+default_layout "mylayout"
+layout_dir "/Users/alechoedwin/.config/zellij/layouts"
+theme_dir "/Users/alechoedwin/.config/zellij/themes"
+pane_frames false
+show_startup_tips false
+
+// Mouse support (like tmux: set -g mouse on)
+// mouse_mode is true by default in zellij
+
+// Web server (Tailscale access)
+web_server_ip "100.65.123.2"
+web_server_cert "/Users/alechoedwin/.config/zellij/certs/zellij.crt"
+web_server_key "/Users/alechoedwin/.config/zellij/certs/zellij.key"

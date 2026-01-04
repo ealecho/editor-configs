@@ -1,0 +1,249 @@
+# Zig snippets for Helix (Zig 0.16.0)
+
+# ============================================================================
+# Imports & Setup
+# ============================================================================
+
+[[snippets]]
+prefix = "std"
+body = 'const std = @import("std");'
+description = "import std"
+
+[[snippets]]
+prefix = "imp"
+body = 'const $1 = @import("$1");'
+description = "import module"
+
+[[snippets]]
+prefix = "main"
+body = '''const std = @import("std");
+
+pub fn main() !void {
+	const stdout = std.io.getStdOut().writer();
+	try stdout.print("Hello, {s}!\n", .{"world"});
+	$0
+}'''
+description = "main function with stdout"
+
+[[snippets]]
+prefix = "mainvoid"
+body = '''pub fn main() void {
+	$0
+}'''
+description = "minimal main function"
+
+# ============================================================================
+# Declarations
+# ============================================================================
+
+[[snippets]]
+prefix = "const"
+body = 'const $1: $2 = $0;'
+description = "const declaration"
+
+[[snippets]]
+prefix = "var"
+body = 'var $1: $2 = $0;'
+description = "var declaration"
+
+[[snippets]]
+prefix = "fn"
+body = '''fn $1($2) $3 {
+	$0
+}'''
+description = "function"
+
+[[snippets]]
+prefix = "pfn"
+body = '''pub fn $1($2) $3 {
+	$0
+}'''
+description = "public function"
+
+[[snippets]]
+prefix = "struct"
+body = '''const $1 = struct {
+	$0
+};'''
+description = "struct declaration"
+
+[[snippets]]
+prefix = "enum"
+body = '''const $1 = enum {
+	$0
+};'''
+description = "enum declaration"
+
+[[snippets]]
+prefix = "union"
+body = '''const $1 = union($2) {
+	$0
+};'''
+description = "tagged union declaration"
+
+# ============================================================================
+# Control Flow
+# ============================================================================
+
+[[snippets]]
+prefix = "if"
+body = '''if ($1) {
+	$0
+}'''
+description = "if statement"
+
+[[snippets]]
+prefix = "ife"
+body = '''if ($1) {
+	$2
+} else {
+	$0
+}'''
+description = "if-else statement"
+
+[[snippets]]
+prefix = "ifc"
+body = '''if ($1) |$2| {
+	$0
+}'''
+description = "if with capture"
+
+[[snippets]]
+prefix = "for"
+body = '''for ($1) |$2| {
+	$0
+}'''
+description = "for loop"
+
+[[snippets]]
+prefix = "fori"
+body = '''for ($1, 0..) |$2, i| {
+	$0
+}'''
+description = "for loop with index"
+
+[[snippets]]
+prefix = "while"
+body = '''while ($1) {
+	$0
+}'''
+description = "while loop"
+
+[[snippets]]
+prefix = "switch"
+body = '''switch ($1) {
+	$2 => $3,
+	else => $0,
+}'''
+description = "switch expression"
+
+# ============================================================================
+# Error Handling
+# ============================================================================
+
+[[snippets]]
+prefix = "try"
+body = 'try $0'
+description = "try expression"
+
+[[snippets]]
+prefix = "orelse"
+body = 'orelse return $0'
+description = "orelse return"
+
+[[snippets]]
+prefix = "catch"
+body = '''catch |err| {
+	$0
+}'''
+description = "catch block"
+
+[[snippets]]
+prefix = "errdefer"
+body = '''errdefer {
+	$0
+}'''
+description = "errdefer block"
+
+# ============================================================================
+# Memory & Allocators
+# ============================================================================
+
+[[snippets]]
+prefix = "gpa"
+body = '''var gpa: std.heap.GeneralPurposeAllocator(.{}) = .init;
+defer _ = gpa.deinit();
+const allocator = gpa.allocator();
+$0'''
+description = "GeneralPurposeAllocator setup"
+
+[[snippets]]
+prefix = "alloc"
+body = 'const allocator = $1.allocator();'
+description = "get allocator"
+
+[[snippets]]
+prefix = "arena"
+body = '''var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+defer arena.deinit();
+const allocator = arena.allocator();
+$0'''
+description = "ArenaAllocator setup"
+
+# ============================================================================
+# Debug & Print
+# ============================================================================
+
+[[snippets]]
+prefix = "print"
+body = 'std.debug.print("$1\\n", .{$0});'
+description = "debug print"
+
+[[snippets]]
+prefix = "log"
+body = 'std.log.info("$1", .{$0});'
+description = "log info"
+
+# ============================================================================
+# Testing
+# ============================================================================
+
+[[snippets]]
+prefix = "test"
+body = '''test "$1" {
+	$0
+}'''
+description = "test block"
+
+[[snippets]]
+prefix = "expect"
+body = 'try std.testing.expect($0);'
+description = "expect assertion"
+
+[[snippets]]
+prefix = "expecteq"
+body = 'try std.testing.expectEqual($1, $2);'
+description = "expectEqual assertion"
+
+# ============================================================================
+# Misc
+# ============================================================================
+
+[[snippets]]
+prefix = "defer"
+body = '''defer {
+	$0
+}'''
+description = "defer block"
+
+[[snippets]]
+prefix = "comptime"
+body = '''comptime {
+	$0
+}'''
+description = "comptime block"
+
+[[snippets]]
+prefix = "unreachable"
+body = 'unreachable'
+description = "unreachable"
