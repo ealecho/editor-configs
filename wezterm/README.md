@@ -126,14 +126,13 @@ The configuration uses platform-specific modifier keys:
 ### Panes
 | Keys | Action |
 |------|--------|
-| `SUPER+\` | Split vertical |
-| `SUPER_REV+\` | Split horizontal |
+| `SUPER+d` | Split vertical |
+| `SUPER+SHIFT+d` | Split horizontal |
 | `SUPER+Enter` | Toggle pane zoom |
 | `SUPER+w` | Close pane |
 | `SUPER_REV+k/j/h/l` | Navigate panes (up/down/left/right) |
 | `SUPER_REV+p` | Swap pane |
 | `SUPER+u` | Scroll up 5 lines |
-| `SUPER+d` | Scroll down 5 lines |
 | `PageUp/PageDown` | Scroll page |
 
 ### Key Tables
