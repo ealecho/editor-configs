@@ -166,12 +166,12 @@ local keys = {
    {
       key = 'd',
       mods = mod.SUPER,
-      action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
+      action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
    },
    {
       key = 'D',
       mods = mod.SUPER,
-      action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
+      action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
    },
 
    -- panes: zoom+close pane

@@ -126,8 +126,8 @@ The configuration uses platform-specific modifier keys:
 ### Panes
 | Keys | Action |
 |------|--------|
-| `SUPER+d` | Split vertical |
-| `SUPER+SHIFT+d` | Split horizontal |
+| `SUPER+d` | Split horizontal |
+| `SUPER+SHIFT+d` | Split vertical |
 | `SUPER+Enter` | Toggle pane zoom |
 | `SUPER+w` | Close pane |
 | `SUPER_REV+k/j/h/l` | Navigate panes (up/down/left/right) |
