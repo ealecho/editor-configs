@@ -2,8 +2,6 @@
 
 Personal WezTerm configuration with automatic dark/light theme switching and modular structure.
 
-![screenshot](./.github/screenshots/wezterm.gif)
-
 ## Features
 
 - **Automatic theme switching**: Switches between dark (vaporwave-dark) and light (xcode-light) themes based on system appearance
@@ -67,6 +65,86 @@ cp -r ~/editor-configs/wezterm ~/.config/wezterm
 - Modify theme colors in `colors/` directory
 - Uncomment backdrop lines in `wezterm.lua` to enable background images
 
-## Credits
+## Key Bindings
 
-Based on configuration from [KevinSilvester/wezterm-config](https://github.com/KevinSilvester/wezterm-config)
+The configuration uses platform-specific modifier keys:
+- **macOS**: `SUPER` = `Super`, `SUPER_REV` = `Super+Ctrl`
+- **Windows/Linux**: `SUPER` = `Alt`, `SUPER_REV` = `Alt+Ctrl`
+- **Leader key**: `SUPER_REV+Space`
+
+### Miscellaneous
+| Keys | Action |
+|------|--------|
+| `F1` | Activate copy mode |
+| `F2` | Command palette |
+| `F3` | Show launcher |
+| `F4` | Show launcher (tabs only) |
+| `F5` | Show launcher (workspaces only) |
+| `F11` | Toggle fullscreen |
+| `F12` | Debug overlay |
+| `SUPER+f` | Search text |
+| `SUPER_REV+u` | Open URL (quick select) |
+| `SUPER+SHIFT+p` | Copy file path (quick select) |
+| `SUPER+SHIFT+g` | Copy git hash (quick select) |
+| `SUPER+SHIFT+i` | Copy IP address (quick select) |
+| `SUPER+SHIFT+q` | Copy quoted text (quick select) |
+
+### Copy/Paste
+| Keys | Action |
+|------|--------|
+| `SUPER+c` or `Ctrl+Shift+c` | Copy to clipboard |
+| `SUPER+v` or `Ctrl+Shift+v` | Paste from clipboard |
+
+### Cursor Movement
+| Keys | Action |
+|------|--------|
+| `SUPER+LeftArrow` | Move to line start |
+| `SUPER+RightArrow` | Move to line end |
+| `SUPER+Backspace` | Clear line |
+
+### Tabs
+| Keys | Action |
+|------|--------|
+| `SUPER+t` | New tab (default domain) |
+| `SUPER_REV+t` | New tab (WSL:Ubuntu) |
+| `SUPER_REV+w` | Close current tab |
+| `SUPER+[` | Previous tab |
+| `SUPER+]` | Next tab |
+| `SUPER_REV+[` | Move tab left |
+| `SUPER_REV+]` | Move tab right |
+| `SUPER+0` | Rename tab |
+| `SUPER_REV+0` | Reset tab name |
+| `SUPER+9` | Toggle tab bar |
+
+### Windows
+| Keys | Action |
+|------|--------|
+| `SUPER+n` | New window |
+| `SUPER+=` | Increase window size |
+| `SUPER+-` | Decrease window size |
+
+### Panes
+| Keys | Action |
+|------|--------|
+| `SUPER+\` | Split vertical |
+| `SUPER_REV+\` | Split horizontal |
+| `SUPER+Enter` | Toggle pane zoom |
+| `SUPER+w` | Close pane |
+| `SUPER_REV+k/j/h/l` | Navigate panes (up/down/left/right) |
+| `SUPER_REV+p` | Swap pane |
+| `SUPER+u` | Scroll up 5 lines |
+| `SUPER+d` | Scroll down 5 lines |
+| `PageUp/PageDown` | Scroll page |
+
+### Key Tables
+| Keys | Action |
+|------|--------|
+| `LEADER+f` then `k/j/r` | Increase/decrease/reset font size |
+| `LEADER+p` then `k/j/h/l` | Resize pane (up/down/left/right) |
+| `Escape` or `q` | Exit key table mode |
+
+### Mouse
+| Action | Binding |
+|--------|---------|
+| `SUPER+Click` | Open link at cursor |
+
